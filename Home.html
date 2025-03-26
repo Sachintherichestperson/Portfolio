@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sachin Bajaj | Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+        body {
+            background-color: black;
+            color: white;
+            overflow-x: hidden;
+        }
+
+        .entry-logo {
+            text-align: center;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 50px;
+            font-weight: bold;
+            text-shadow: 0 0 20px rgb(23, 175, 25);
+            animation: fadeOut 3s linear forwards;
+        }
+        @keyframes fadeOut {
+            0% { opacity: 1; }
+            100% { opacity: 0; display: none; }
+        }
+
+        nav {
+            width: 100%;
+            height: 80px;
+            background: rgba(34, 34, 34, 0.8);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 28px;
+            font-weight: bold;
+            box-shadow: 0 0 15px rgba(0, 255, 100, 0.5);
+        }
+
+        section{
+            display: none;
+        }
+
+        .main {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 60px;
+            gap: 30px;
+            flex-direction: row;
+            align-content: center;
+            align-items: center;
+        }
+
+
+        .Boxes {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            width: 70%;
+        }
+        a {
+            text-decoration: none;
+        }
+        .box {
+            width: 500px;
+            height: 300px;
+            border-radius: 15px;
+            display: flex;
+            flex-direction: column-reverse;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            font-weight: bold;
+            color: white;
+            cursor: pointer;
+            transition: transform 0.3s, box-shadow 0.3s;
+            position: relative;
+        }
+        #particles-js {
+            position: fixed;
+            width: 100%;
+            height: 100vh;
+            background: black;
+            z-index: -1;
+        }
+
+        .box:hover {
+            transform: scale(1.05);
+        }
+        i {
+            font-size: 35px;
+            margin-left: 10px;
+        }
+
+        .box-1 {
+            background: linear-gradient(45deg, rgb(81, 53, 182), rgb(9, 7, 148));
+            box-shadow: 0 0 20px rgba(81, 53, 182, 0.8);
+        }
+        .box-2 {
+            background: linear-gradient(45deg, rgb(152, 0, 0), rgb(255, 0, 0));
+            box-shadow: 0 0 20px rgba(152, 0, 0, 0.8);
+        }
+        .box-3 {
+            background: linear-gradient(45deg, rgb(227, 1, 57), rgb(169, 1, 21));
+            box-shadow: 0 0 20px rgba(227, 1, 57, 0.8);
+        }
+        .box-4 {
+            background: linear-gradient(45deg, rgb(28, 178, 1), rgb(0, 190, 63));
+            box-shadow: 0 0 20px rgba(28, 178, 1, 0.8);
+        }
+
+        @media (max-width: 768px) {
+            .main {
+                flex-direction: column;
+                align-items: center;
+            }
+            .Boxes {
+                width: 100%;
+            }
+        }
+
+
+        .Profile {
+            width: 500px;
+            height: 700px;
+            background: linear-gradient(135deg, #4f4f4f, #2d2d2d);
+            border-radius: 25px;
+            padding: 30px;
+            text-align: center;
+            box-shadow: 0 0 30px rgba(34, 43, 30, 0.8);
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.4s, box-shadow 0.4s;
+        }
+
+        @keyframes borderGlow {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .Profile:hover {
+            transform: scale(1.08);
+            box-shadow: 0 0 50px rgb(82, 82, 82);
+        }
+
+        .Profile img {
+            width: 280px;
+            height: 325px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid white;
+            transition: transform 0.4s, box-shadow 0.4s;
+            box-shadow: 0 0 20px rgba(0, 255, 255, 0.6);
+        }
+
+        .Profile img:hover {
+            transform: scale(1.15);
+            box-shadow: 0 0 40px rgb(0, 255, 4);
+        }
+
+
+        .name {
+            font-size: 50px;
+            font-weight: bold;
+            margin-top: 15px;
+            text-shadow: 0 0 10px rgba(230, 221, 226, 0.8);
+        }
+
+        .Header {
+            font-size: 25px;
+            color: #ddd;
+            margin-top: 10px;
+            padding: 12px;
+            font-style: italic;
+            text-shadow: 0 0 10px rgba(0, 255, 255, 0.6);
+        }
+
+
+        @keyframes floatingParticles {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+    </style>
+</head>
+<body>
+    <div id="particles-js"></div>
+
+    <div class="entry-logo">
+        <p>Welcome To Sachin's Portfolio</p>
+    </div>
+
+    <section>
+        <div class="main">
+            <div class="Profile">
+                <img src="Sachin.png" alt="Sachin Bajaj">
+                <div class="name">Sachin Bajaj</div>
+                <div class="Header">A Web Developer who has built amazing websites and apps.</div>
+            </div>
+            <div class="Boxes">
+                <a href="Resume.html"><div class="box box-1">Resume <i class="fas fa-file-alt"></i></div></a>
+                <a href="Github.html"><div class="box box-2">Projects <i class="fas fa-code"></i></div></a>
+                <a href="#"><div class="box box-3">Contact <i class="fas fa-envelope"></i></div></a>
+                <a href="#"><div class="box box-4">GitHub <i class="fab fa-github"></i></div></a>
+            </div>
+        </div>
+    </section>
+    <script>
+        particlesJS("particles-js", {
+            "particles": {
+                "number": { "value": 80 },
+                "size": { "value": 3 },
+                "color": { "value": ["#ff0000", "#00ff00", "#0000ff", "#ffff00", "#ff00ff", "#00ffff"] },
+                "move": { "attract": { "enable": true } },
+            }
+        });
+
+        const animation = document.querySelector(".entry-logo");
+        const section = document.querySelector("section");
+
+        animation.addEventListener("animationend", () => {
+            section.style.display = "block";
+        });
+    </script>
+
+<script>
+    function createShockEffect(startX, startY, endX, endY) {
+        let shock = document.createElement("div");
+        shock.classList.add("shock");
+        document.body.appendChild(shock);
+
+        let x = startX, y = startY;
+        let steps = 20;
+        let dx = (endX - startX) / steps;
+        let dy = (endY - startY) / steps;
+
+        let interval = setInterval(() => {
+            x += dx + (Math.random() * 10 - 5); // Random zigzag effect
+            y += dy + (Math.random() * 10 - 5);
+            shock.style.left = `${x}px`;
+            shock.style.top = `${y}px`;
+
+            if (Math.abs(x - endX) < 10 && Math.abs(y - endY) < 10) {
+                clearInterval(interval);
+                shock.remove();
+            }
+        }, 50);
+
+    }
+
+    function startShockEffect() {
+        let profile = document.querySelector(".Profile img");
+        let boxes = document.querySelectorAll(".box");
+
+        let profileRect = profile.getBoundingClientRect();
+
+        boxes.forEach(box => {
+            let boxRect = box.getBoundingClientRect();
+            createShockEffect(
+                profileRect.left + profileRect.width / 2, 
+                profileRect.top + profileRect.height / 2,
+                boxRect.left + boxRect.width / 2, 
+                boxRect.top + boxRect.height / 2
+            );
+        });
+    }
+
+    // Start effect automatically every 2 seconds
+    setInterval(startShockEffect, 2000);
+</script>
+</body>
+</html>
